@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import RiskBadge from "@/components/RiskBadge";
+import { IconThreatIntel, IconMonitoring, IconAIEngine, IconAlertBot } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "服務項目｜TocloudAI",
@@ -35,7 +36,10 @@ export default function ServicesPage() {
       {/* Module 1 */}
       <section className="section-line">
         <div className="mx-auto max-w-content px-6 py-14">
-          <span className="font-mono text-sm text-signal">01</span>
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-sm text-signal">01</span>
+            <IconThreatIntel className="h-9 w-9 text-signal" />
+          </div>
           <h2 className="mt-3 text-2xl font-bold text-ink">國際全球威脅情資訂閱服務</h2>
           <p className="mt-2 text-sm text-muted">通用開放威脅資料庫</p>
           <p className="mt-5 max-w-3xl text-sm leading-relaxed text-slate">
@@ -51,7 +55,10 @@ export default function ServicesPage() {
       {/* Module 2 */}
       <section className="section-line">
         <div className="mx-auto max-w-content px-6 py-14">
-          <span className="font-mono text-sm text-signal">02</span>
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-sm text-signal">02</span>
+            <IconMonitoring className="h-9 w-9 text-signal" />
+          </div>
           <h2 className="mt-3 text-2xl font-bold text-ink">全環境事件匯整與可視化監控建置</h2>
           <p className="mt-2 text-sm text-muted">開源監控平台</p>
           <p className="mt-5 max-w-3xl text-sm leading-relaxed text-slate">
@@ -66,7 +73,10 @@ export default function ServicesPage() {
       {/* Module 3 */}
       <section className="section-line">
         <div className="mx-auto max-w-content px-6 py-14">
-          <span className="font-mono text-sm text-signal">03</span>
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-sm text-signal">03</span>
+            <IconAIEngine className="h-9 w-9 text-signal" />
+          </div>
           <h2 className="mt-3 text-2xl font-bold text-ink">AI 智能安全事件分析與風險研判引擎</h2>
           <p className="mt-5 max-w-3xl text-sm leading-relaxed text-slate">
             單純的日誌蒐集無法產生防禦價值，我們導入 AI 自動分析研判機制，結合企業內部真實事件紀錄與國際最新威脅情資上下文進行雙層交叉比對，自動化完成風險鑑別。
@@ -90,7 +100,10 @@ export default function ServicesPage() {
       {/* Module 4 */}
       <section className="section-line">
         <div className="mx-auto max-w-content px-6 py-14">
-          <span className="font-mono text-sm text-signal">04</span>
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-sm text-signal">04</span>
+            <IconAlertBot className="h-9 w-9 text-signal" />
+          </div>
           <h2 className="mt-3 text-2xl font-bold text-ink">客製化即時分級告警機器人服務</h2>
           <p className="mt-5 max-w-3xl text-sm leading-relaxed text-slate">
             解決傳統監控「有紀錄、無通知、事件延遲處理」的維運缺口，我們建置專屬客製化線上告警機器人，搭配 AI

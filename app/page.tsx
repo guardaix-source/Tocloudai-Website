@@ -1,34 +1,47 @@
 import Link from "next/link";
 import SignalGrid from "@/components/SignalGrid";
+import { IconThreatIntel, IconMonitoring, IconAIEngine, IconAlertBot } from "@/components/Icons";
+
+const HIGHLIGHTS = ["情資在地化轉譯", "日誌統一可視", "AI 自動分級", "分級即時告警"];
 
 const PILLARS = [
   {
     n: "01",
     title: "國際威脅情資訂閱",
     desc: "彙整全球資安研究機構與監測中心的開放式威脅數據，在地化過濾轉譯為企業可判讀的防禦規則。",
+    Icon: IconThreatIntel,
   },
   {
     n: "02",
     title: "全設備日誌可視監控",
     desc: "統一匯整防火牆、主機、雲端服務等所有事件與流量紀錄，用客製化儀表板讓風險狀態可視、可追溯。",
+    Icon: IconMonitoring,
   },
   {
     n: "03",
     title: "AI 智能風險研判",
     desc: "雙層交叉比對內部事件與最新威脅情資，自動分級、過濾雜訊，產出可落地的處置建議。",
+    Icon: IconAIEngine,
   },
   {
     n: "04",
     title: "分級即時告警機器人",
     desc: "依風險等級差異化推送通知，支援權限分組與時間軸追溯，讓事件處理形成完整閉環。",
+    Icon: IconAlertBot,
   },
+];
+
+const AUDIENCE = [
+  { title: "中小企業", desc: "沒有專職資安團隊，需要用有限預算補齊維運能力。" },
+  { title: "政府機關單位", desc: "需符合資安規範，但既有設備分散、缺乏統一監控視角。" },
+  { title: "成長中的新創", desc: "業務快速擴張，資安建置要跟得上但不能拖慢腳步。" },
 ];
 
 export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="mx-auto max-w-content px-6 pb-20 pt-16 sm:pt-24">
+      <section className="mx-auto max-w-content px-6 pb-16 pt-16 sm:pt-24">
         <div className="grid gap-12 sm:grid-cols-[1.1fr_0.9fr] sm:items-center">
           <div>
             <p className="eyebrow mb-5">ENTERPRISE THREAT DEFENSE</p>
@@ -54,6 +67,14 @@ export default function HomePage() {
               >
                 預約諮詢
               </Link>
+            </div>
+            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
+              {HIGHLIGHTS.map((h) => (
+                <span key={h} className="flex items-center gap-2 text-xs text-muted">
+                  <span className="h-1 w-1 rounded-full bg-signal" />
+                  {h}
+                </span>
+              ))}
             </div>
           </div>
           <div className="h-64 rounded border border-line bg-surface p-4 sm:h-80">
@@ -91,8 +112,11 @@ export default function HomePage() {
           <div className="mt-10 grid gap-px overflow-hidden rounded border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
             {PILLARS.map((p) => (
               <div key={p.n} className="bg-surface p-7">
-                <span className="font-mono text-sm text-signal">{p.n}</span>
-                <h3 className="mt-3 text-base font-bold text-ink">{p.title}</h3>
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-sm text-signal">{p.n}</span>
+                  <p.Icon className="h-8 w-8 text-signal" />
+                </div>
+                <h3 className="mt-4 text-base font-bold text-ink">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate">{p.desc}</p>
               </div>
             ))}
@@ -101,6 +125,21 @@ export default function HomePage() {
             <Link href="/services" className="text-sm font-medium text-signal hover:text-signal-dark">
               查看完整服務內容 →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Who it's for */}
+      <section className="section-line">
+        <div className="mx-auto max-w-content px-6 py-16">
+          <p className="eyebrow mb-4">適合對象</p>
+          <div className="grid gap-px overflow-hidden rounded border border-line bg-line sm:grid-cols-3">
+            {AUDIENCE.map((a) => (
+              <div key={a.title} className="bg-surface p-7">
+                <h3 className="text-base font-bold text-ink">{a.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate">{a.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
