@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SignalGrid from "@/components/SignalGrid";
+import DashboardMock from "@/components/DashboardMock";
 import { IconThreatIntel, IconMonitoring, IconAIEngine, IconAlertBot } from "@/components/Icons";
 
 const HIGHLIGHTS = ["情資在地化轉譯", "日誌統一可視", "AI 自動分級", "分級即時告警"];
@@ -37,6 +37,13 @@ const AUDIENCE = [
   { title: "成長中的新創", desc: "業務快速擴張，資安建置要跟得上但不能拖慢腳步。" },
 ];
 
+const PROCESS = [
+  { n: "STEP 1", title: "初步盤點", desc: "了解現有設備、日誌來源與資安痛點，抓出優先處理的風險缺口。" },
+  { n: "STEP 2", title: "架構建議", desc: "依規模與預算提出對應的情資訂閱與監控導入方案。" },
+  { n: "STEP 3", title: "分階段建置", desc: "依模組逐步導入監控平台、AI 分析與告警機制，不打斷既有維運。" },
+  { n: "STEP 4", title: "持續維運", desc: "事件分級處理、定期檢視告警規則，隨威脅趨勢調整防禦策略。" },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -56,16 +63,16 @@ export default function HomePage() {
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Link
-                href="/services"
-                className="rounded bg-ink px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-signal-dark"
-              >
-                了解服務架構
-              </Link>
-              <Link
                 href="/contact"
-                className="rounded border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-signal hover:text-signal"
+                className="rounded bg-signal px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-signal-dark"
               >
                 預約諮詢
+              </Link>
+              <Link
+                href="/services"
+                className="rounded border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-signal hover:text-signal"
+              >
+                了解服務架構
               </Link>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
@@ -77,8 +84,8 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <div className="h-64 rounded border border-line bg-surface p-4 sm:h-80">
-            <SignalGrid />
+          <div className="h-72 overflow-hidden rounded border border-line shadow-sm sm:h-96">
+            <DashboardMock />
           </div>
         </div>
       </section>
@@ -138,6 +145,27 @@ export default function HomePage() {
               <div key={a.title} className="bg-surface p-7">
                 <h3 className="text-base font-bold text-ink">{a.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate">{a.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How we work */}
+      <section className="section-line">
+        <div className="mx-auto max-w-content px-6 py-16">
+          <p className="eyebrow mb-4">合作流程</p>
+          <h2 className="text-2xl font-bold text-ink">從盤點到持續維運</h2>
+          <div className="relative mt-10 grid gap-8 sm:grid-cols-4">
+            <div className="absolute left-0 right-0 top-[9px] hidden h-px bg-line sm:block" />
+            {PROCESS.map((s) => (
+              <div key={s.n} className="relative">
+                <span className="relative z-10 flex h-[18px] w-[18px] items-center justify-center rounded-full bg-signal">
+                  <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                </span>
+                <p className="mt-4 font-mono text-xs text-signal">{s.n}</p>
+                <h3 className="mt-1 text-sm font-bold text-ink">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate">{s.desc}</p>
               </div>
             ))}
           </div>

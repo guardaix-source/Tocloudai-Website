@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const NAV = [
@@ -15,12 +16,13 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
-      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5">
-        <Link href="/" className="flex items-baseline gap-2" onClick={() => setOpen(false)}>
-          <span className="text-lg font-bold tracking-tight text-ink">
-            TocloudAI
+      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4">
+        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+          <Image src="/logo.jpg" alt="向雲智慧" width={36} height={34} className="rounded-sm" />
+          <span className="flex flex-col leading-none">
+            <span className="text-base font-bold tracking-tight text-ink">向雲智慧</span>
+            <span className="eyebrow mt-1 text-[10px]">TOCLOUDAI</span>
           </span>
-          <span className="eyebrow hidden sm:inline">資安維運</span>
         </Link>
 
         {/* Desktop nav */}

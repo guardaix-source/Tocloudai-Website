@@ -19,7 +19,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TocloudAI｜企業資安維運與威脅情資訂閱服務",
+  title: "向雲智慧 TocloudAI｜企業資安維運與威脅情資訂閱服務",
   description:
     "整合國際威脅情資、日誌可視化監控、AI 風險研判與分級即時告警，協助企業以有限預算建置主動式資安防禦體系。",
 };

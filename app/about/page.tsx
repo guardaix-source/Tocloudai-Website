@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "關於我們｜TocloudAI",
+  title: "關於我們｜向雲智慧 TocloudAI",
 };
 
 export default function AboutPage() {

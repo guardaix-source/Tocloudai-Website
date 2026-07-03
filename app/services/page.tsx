@@ -3,8 +3,15 @@ import RiskBadge from "@/components/RiskBadge";
 import { IconThreatIntel, IconMonitoring, IconAIEngine, IconAlertBot } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "服務項目｜TocloudAI",
+  title: "服務項目｜向雲智慧 TocloudAI",
 };
+
+const MODULE_NAV = [
+  { href: "#module-01", label: "01 情資訂閱" },
+  { href: "#module-02", label: "02 可視監控" },
+  { href: "#module-03", label: "03 AI 風險研判" },
+  { href: "#module-04", label: "04 分級告警" },
+];
 
 const AI_CAPABILITIES = [
   { title: "自動風險分級", desc: "依危害程度、攻擊特徵、影響範圍，自動區分高、中、低風險等級。" },
@@ -33,8 +40,23 @@ export default function ServicesPage() {
         </p>
       </section>
 
+      {/* In-page module nav */}
+      <div className="sticky top-[65px] z-40 border-y border-line bg-paper/95 backdrop-blur">
+        <nav className="mx-auto flex max-w-content gap-6 overflow-x-auto px-6 py-3 text-sm">
+          {MODULE_NAV.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="whitespace-nowrap text-slate transition-colors hover:text-signal"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
       {/* Module 1 */}
-      <section className="section-line">
+      <section id="module-01" className="section-line scroll-mt-32">
         <div className="mx-auto max-w-content px-6 py-14">
           <div className="flex items-center justify-between">
             <span className="font-mono text-sm text-signal">01</span>
@@ -52,8 +74,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Module 2 */}
-      <section className="section-line">
+      <section id="module-02" className="section-line scroll-mt-32">
         <div className="mx-auto max-w-content px-6 py-14">
           <div className="flex items-center justify-between">
             <span className="font-mono text-sm text-signal">02</span>
@@ -70,8 +91,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Module 3 */}
-      <section className="section-line">
+      <section id="module-03" className="section-line scroll-mt-32">
         <div className="mx-auto max-w-content px-6 py-14">
           <div className="flex items-center justify-between">
             <span className="font-mono text-sm text-signal">03</span>
@@ -97,8 +117,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Module 4 */}
-      <section className="section-line">
+      <section id="module-04" className="section-line scroll-mt-32">
         <div className="mx-auto max-w-content px-6 py-14">
           <div className="flex items-center justify-between">
             <span className="font-mono text-sm text-signal">04</span>
