@@ -8,23 +8,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#F4F6FA",
-        slate: "#AAB4C8",
-        muted: "#748099",
-        paper: "#0B0F1A",
-        surface: "#121826",
-        surface2: "#161E2E",
-        line: "#232B3D",
+        ink: "#0F172A",
+        slate: "#475569",
+        muted: "#64748B",
+        paper: "#F7F9FC",
+        surface: "#FFFFFF",
+        surface2: "#EDF1F7",
+        line: "#E2E8F0",
         signal: {
           DEFAULT: "#3E82F7",
           dark: "#2E63C9",
-          light: "#1A2740",
-          bright: "#5B9CFF",
+          light: "#E8F0FE",
+          bright: "#2563EB",
         },
         risk: {
-          high: "#FF6B54",
-          mid: "#FFB648",
-          low: "#3DD68C",
+          high: "#DC2626",
+          mid: "#B45309",
+          low: "#15803D",
         },
       },
       fontFamily: {
@@ -39,7 +39,7 @@ const config: Config = {
         DEFAULT: "6px",
       },
       backgroundImage: {
-        "grad-accent": "linear-gradient(90deg, #5B9CFF 0%, #8B7CF6 100%)",
+        "grad-accent": "linear-gradient(90deg, #2563EB 0%, #7C6FF0 100%)",
       },
     },
   },

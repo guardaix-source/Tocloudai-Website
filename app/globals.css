@@ -7,13 +7,13 @@ html {
 }
 
 body {
-  background-color: #0B0F1A;
-  color: #F4F6FA;
+  background-color: #F7F9FC;
+  color: #0F172A;
 }
 
 ::selection {
-  background-color: #1A2740;
-  color: #F4F6FA;
+  background-color: #CFE0FE;
+  color: #0F172A;
 }
 
 :focus-visible {
@@ -35,26 +35,26 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #5B9CFF;
+  color: #2563EB;
 }
 
 .section-line {
-  border-top: 1px solid #232B3D;
+  border-top: 1px solid #E2E8F0;
 }
 
 .grad-text {
-  background-image: linear-gradient(90deg, #5B9CFF 0%, #8B7CF6 100%);
+  background-image: linear-gradient(90deg, #2563EB 0%, #7C6FF0 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .glow-card {
-  box-shadow: 0 0 0 1px #232B3D;
+  box-shadow: 0 0 0 1px #E2E8F0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .glow-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 0 1px #2E63C9, 0 12px 28px -10px rgba(62, 130, 247, 0.4);
+  box-shadow: 0 0 0 1px #2E63C9, 0 12px 28px -10px rgba(62, 130, 247, 0.28);
 }
