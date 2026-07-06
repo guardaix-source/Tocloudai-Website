@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
+import LogoMark from "./LogoMark";
 
 const NAV = [
   { href: "/#features", label: "特色" },
@@ -18,7 +18,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
       <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <Image src="/logo.png" alt="向雲智慧" width={353} height={281} className="h-11 w-auto" />
+          <LogoMark className="h-11 w-11" />
           <span className="text-xl font-bold tracking-tight text-ink">向雲智慧</span>
         </Link>
 
