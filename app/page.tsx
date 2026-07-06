@@ -101,7 +101,7 @@ export default function HomePage() {
       </section>
 
       {/* Four pillars — feature grid */}
-      <section className="section-line">
+      <section id="features" className="section-line scroll-mt-28">
         <div className="mx-auto max-w-content px-6 py-16">
           <div className="max-w-xl">
             <p className="eyebrow mb-4">技術架構</p>
@@ -152,7 +152,7 @@ export default function HomePage() {
       </section>
 
       {/* Process */}
-      <section className="section-line">
+      <section id="how-it-works" className="section-line scroll-mt-28">
         <div className="mx-auto max-w-content px-6 py-16 text-center">
           <p className="eyebrow mb-4">合作流程</p>
           <h2 className="text-3xl font-bold text-ink sm:text-4xl">從<span className="grad-text">盤點</span>到持續維運</h2>

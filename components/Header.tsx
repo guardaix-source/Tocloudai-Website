@@ -5,9 +5,10 @@ import Image from "next/image";
 import { useState } from "react";
 
 const NAV = [
+  { href: "/#features", label: "特色" },
+  { href: "/#how-it-works", label: "如何運作" },
   { href: "/services", label: "服務項目" },
   { href: "/about", label: "關於我們" },
-  { href: "/contact", label: "聯絡我們" },
 ];
 
 export default function Header() {
@@ -15,19 +16,19 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
-      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <Image src="/logo.png" alt="向雲智慧" width={353} height={281} className="h-9 w-auto" />
-          <span className="text-lg font-bold tracking-tight text-ink">向雲智慧</span>
+      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5">
+        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+          <Image src="/logo.png" alt="向雲智慧" width={353} height={281} className="h-11 w-auto" />
+          <span className="text-xl font-bold tracking-tight text-ink">向雲智慧</span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 sm:flex">
+        <nav className="hidden items-center gap-9 sm:flex">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-[15px] font-medium text-slate transition-colors hover:text-ink"
+              className="text-base font-medium text-slate transition-colors hover:text-ink"
             >
               {item.label}
             </Link>
@@ -37,7 +38,7 @@ export default function Header() {
         <div className="hidden items-center gap-3 sm:flex">
           <Link
             href="/contact"
-            className="rounded bg-signal px-5 py-2.5 text-[15px] font-medium text-white transition-colors hover:bg-signal-dark"
+            className="rounded bg-signal px-5 py-2.5 text-base font-medium text-white transition-colors hover:bg-signal-dark"
           >
             預約諮詢
           </Link>
@@ -69,7 +70,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-line/60 py-3.5 text-sm text-slate last:border-b-0 hover:text-ink"
+                className="border-b border-line/60 py-3.5 text-base text-slate last:border-b-0 hover:text-ink"
               >
                 {item.label}
               </Link>

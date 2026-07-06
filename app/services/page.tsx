@@ -41,7 +41,7 @@ export default function ServicesPage() {
       </section>
 
       {/* In-page module nav */}
-      <div className="sticky top-[65px] z-40 border-y border-line bg-paper/95 backdrop-blur">
+      <div className="sticky top-[85px] z-40 border-y border-line bg-paper/95 backdrop-blur">
         <nav className="mx-auto flex max-w-content gap-6 overflow-x-auto px-6 py-3 text-sm">
           {MODULE_NAV.map((item) => (
             <a
@@ -56,7 +56,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Module 1 */}
-      <section id="module-01" className="section-line scroll-mt-32">
+      <section id="module-01" className="section-line scroll-mt-36">
         <div className="mx-auto max-w-content px-6 py-14">
           <div className="flex items-center justify-between">
             <span className="font-mono text-sm text-signal">01</span>
@@ -74,7 +74,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="module-02" className="section-line scroll-mt-32">
+      <section id="module-02" className="section-line scroll-mt-36">
         <div className="mx-auto max-w-content px-6 py-14">
           <div className="flex items-center justify-between">
             <span className="font-mono text-sm text-signal">02</span>
@@ -91,7 +91,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="module-03" className="section-line scroll-mt-32">
+      <section id="module-03" className="section-line scroll-mt-36">
         <div className="mx-auto max-w-content px-6 py-14">
           <div className="flex items-center justify-between">
             <span className="font-mono text-sm text-signal">03</span>
@@ -117,7 +117,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="module-04" className="section-line scroll-mt-32">
+      <section id="module-04" className="section-line scroll-mt-36">
         <div className="mx-auto max-w-content px-6 py-14">
           <div className="flex items-center justify-between">
             <span className="font-mono text-sm text-signal">04</span>
