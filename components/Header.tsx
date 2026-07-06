@@ -17,8 +17,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
       <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <Image src="/logo.png" alt="向雲智慧" width={34} height={34} className="h-8 w-8 object-contain" />
-          <span className="text-base font-bold tracking-tight text-ink">向雲智慧</span>
+          <Image src="/logo.png" alt="向雲智慧" width={353} height={281} className="h-9 w-auto" />
+          <span className="text-lg font-bold tracking-tight text-ink">向雲智慧</span>
         </Link>
 
         {/* Desktop nav */}
@@ -27,7 +27,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-slate transition-colors hover:text-ink"
+              className="text-[15px] font-medium text-slate transition-colors hover:text-ink"
             >
               {item.label}
             </Link>
@@ -37,7 +37,7 @@ export default function Header() {
         <div className="hidden items-center gap-3 sm:flex">
           <Link
             href="/contact"
-            className="rounded bg-signal px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-signal-dark"
+            className="rounded bg-signal px-5 py-2.5 text-[15px] font-medium text-white transition-colors hover:bg-signal-dark"
           >
             預約諮詢
           </Link>

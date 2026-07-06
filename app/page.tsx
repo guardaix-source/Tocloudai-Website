@@ -58,33 +58,33 @@ export default function HomePage() {
         <div className="grid gap-12 sm:grid-cols-[1.1fr_0.9fr] sm:items-center">
           <div>
             <p className="eyebrow mb-5">ENTERPRISE THREAT DEFENSE</p>
-            <h1 className="text-4xl font-black leading-[1.15] tracking-tight text-ink sm:text-5xl">
+            <h1 className="text-5xl font-black leading-[1.12] tracking-tight text-ink sm:text-6xl">
               把雜亂的資安事件，
               <br />
               變成<span className="grad-text">有序的防禦體系</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-slate">
+            <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-slate">
               變種攻擊與新型漏洞層出不窮，傳統被動式防禦與單純日誌紀錄已難以應對。我們透過國際情資匯整、全設備可視監控、AI
               風險研判與分級即時告警，協助企業將海量事件轉化為可預防、可追溯、可管理的主動式防禦。
             </p>
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="flex items-center gap-2 rounded bg-signal px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-signal-dark"
+                className="flex items-center gap-2 rounded bg-signal px-7 py-3.5 text-base font-medium text-white transition-colors hover:bg-signal-dark"
               >
                 預約諮詢
                 <span aria-hidden>→</span>
               </Link>
               <Link
                 href="/services"
-                className="rounded border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-signal hover:text-signal"
+                className="rounded border border-line px-7 py-3.5 text-base font-medium text-ink transition-colors hover:border-signal hover:text-signal"
               >
                 了解服務架構
               </Link>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
               {HIGHLIGHTS.map((h) => (
-                <span key={h} className="flex items-center gap-1.5 text-xs text-muted">
+                <span key={h} className="flex items-center gap-1.5 text-sm text-muted">
                   <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-signal-bright" fill="none" stroke="currentColor" strokeWidth="1.6">
                     <circle cx="8" cy="8" r="6.5" />
                     <path d="M5.3 8.2l1.8 1.8 3.6-4" strokeLinecap="round" strokeLinejoin="round" />
@@ -105,23 +105,23 @@ export default function HomePage() {
         <div className="mx-auto max-w-content px-6 py-16">
           <div className="max-w-xl">
             <p className="eyebrow mb-4">技術架構</p>
-            <h2 className="text-2xl font-bold text-ink sm:text-3xl">
+            <h2 className="text-3xl font-bold text-ink sm:text-4xl">
               四大核心技術，構成<span className="grad-text">完整防禦閉環</span>
             </h2>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2">
             {PILLARS.map((p) => (
-              <div key={p.n} className="glow-card rounded-lg bg-surface p-7 transition-shadow">
+              <div key={p.n} className="glow-card rounded-lg bg-surface p-7">
                 <div className="flex h-11 w-11 items-center justify-center rounded bg-signal-light">
                   <p.Icon className="h-6 w-6 text-signal-bright" />
                 </div>
-                <h3 className="mt-5 text-base font-bold text-ink">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate">{p.desc}</p>
+                <h3 className="mt-5 text-lg font-bold text-ink">{p.title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-slate">{p.desc}</p>
               </div>
             ))}
           </div>
           <div className="mt-8">
-            <Link href="/services" className="text-sm font-medium text-signal-bright hover:text-signal">
+            <Link href="/services" className="text-base font-medium text-signal-bright hover:text-signal">
               查看完整服務內容 →
             </Link>
           </div>
@@ -131,20 +131,20 @@ export default function HomePage() {
       {/* Problem framing */}
       <section className="section-line">
         <div className="mx-auto max-w-content px-6 py-16 text-center">
-          <h2 className="text-2xl font-bold text-ink sm:text-3xl">
+          <h2 className="text-3xl font-bold text-ink sm:text-4xl">
             別再讓<span className="grad-text">被動記錄</span>拖慢防禦速度
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate">
+          <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-slate">
             人工比對、資料分散、告警延遲，是多數企業資安維運的日常，也是攻擊者最容易利用的空隙。
           </p>
           <div className="mt-10 grid gap-5 text-left sm:grid-cols-3">
             {PAIN_POINTS.map((p) => (
-              <div key={p.title} className="rounded-lg border border-line bg-surface p-6">
+              <div key={p.title} className="glow-card rounded-lg bg-surface p-6">
                 <div className="flex h-9 w-9 items-center justify-center rounded bg-risk-high/15">
                   <span className="h-2 w-2 rounded-full bg-risk-high" />
                 </div>
-                <h3 className="mt-4 text-sm font-bold text-ink">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate">{p.desc}</p>
+                <h3 className="mt-4 text-base font-bold text-ink">{p.title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-slate">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -155,15 +155,15 @@ export default function HomePage() {
       <section className="section-line">
         <div className="mx-auto max-w-content px-6 py-16 text-center">
           <p className="eyebrow mb-4">合作流程</p>
-          <h2 className="text-2xl font-bold text-ink sm:text-3xl">從<span className="grad-text">盤點</span>到持續維運</h2>
+          <h2 className="text-3xl font-bold text-ink sm:text-4xl">從<span className="grad-text">盤點</span>到持續維運</h2>
           <div className="mt-10 grid gap-6 text-left sm:grid-cols-4">
             {PROCESS.map((s) => (
-              <div key={s.n} className="rounded-lg border border-line bg-surface p-6">
+              <div key={s.n} className="glow-card rounded-lg bg-surface p-6">
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-signal font-mono text-sm font-bold text-white">
                   {s.n}
                 </span>
-                <h3 className="mt-4 text-sm font-bold text-ink">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate">{s.desc}</p>
+                <h3 className="mt-4 text-base font-bold text-ink">{s.title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-slate">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -176,9 +176,9 @@ export default function HomePage() {
           <p className="eyebrow mb-4">適合對象</p>
           <div className="grid gap-5 sm:grid-cols-3">
             {AUDIENCE.map((a) => (
-              <div key={a.title} className="rounded-lg border border-line bg-surface p-7">
-                <h3 className="text-base font-bold text-ink">{a.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate">{a.desc}</p>
+              <div key={a.title} className="glow-card rounded-lg bg-surface p-7">
+                <h3 className="text-lg font-bold text-ink">{a.title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-slate">{a.desc}</p>
               </div>
             ))}
           </div>
@@ -188,15 +188,15 @@ export default function HomePage() {
       {/* Final CTA panel */}
       <section className="mx-auto max-w-content px-6 py-20">
         <div className="rounded-xl border border-line bg-surface px-8 py-14 text-center">
-          <h2 className="text-2xl font-bold text-ink sm:text-3xl">
+          <h2 className="text-3xl font-bold text-ink sm:text-4xl">
             準備好<span className="grad-text">盤點資安缺口</span>了嗎？
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-slate">
+          <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-slate">
             留下需求，我們會在一個工作天內回覆評估建議。
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded bg-signal px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-signal-dark"
+            className="mt-8 inline-flex items-center gap-2 rounded bg-signal px-8 py-3.5 text-base font-medium text-white transition-colors hover:bg-signal-dark"
           >
             聯絡我們
             <span aria-hidden>→</span>
