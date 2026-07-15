@@ -10,7 +10,7 @@ export default function Footer() {
             src="/logo.png"
             alt="向雲智慧 TocloudAI"
             width={700}
-            height={544}
+            height={460}
             className="h-7 w-auto"
           />
           <p className="text-sm font-semibold text-ink">向雲智慧</p>

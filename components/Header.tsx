@@ -22,7 +22,7 @@ export default function Header() {
             src="/logo.png"
             alt="向雲智慧 TocloudAI"
             width={700}
-            height={544}
+            height={460}
             priority
             className="h-11 w-auto"
           />
