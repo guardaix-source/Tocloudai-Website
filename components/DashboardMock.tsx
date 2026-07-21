@@ -7,10 +7,10 @@
 // mockup reads like a screenshot of the actual product.
 
 const LOG_ROWS = [
-  { time: "14:02:11", src: "防火牆 / 對外連線", level: "high" as const, note: "異常掃描行為，來源 IP 已封鎖" },
-  { time: "14:01:47", src: "雲端服務 / 登入", level: "mid" as const, note: "非常用地區登入嘗試" },
-  { time: "13:58:03", src: "主機伺服器", level: "low" as const, note: "例行更新，無異常" },
-  { time: "13:55:20", src: "網路交換設備", level: "low" as const, note: "流量在正常範圍內" },
+  { time: "14:02:11", src: "防火牆 / 對外連線", level: "high" as const, note: "異常掃描行為，來源 IP 已封鎖", mobileHidden: false },
+  { time: "14:01:47", src: "雲端服務 / 登入", level: "mid" as const, note: "非常用地區登入嘗試", mobileHidden: false },
+  { time: "13:58:03", src: "主機伺服器", level: "low" as const, note: "例行更新，無異常", mobileHidden: false },
+  { time: "13:55:20", src: "網路交換設備", level: "low" as const, note: "流量在正常範圍內", mobileHidden: true },
 ];
 
 const LEVEL_STYLE = {
@@ -50,10 +50,10 @@ export default function DashboardMock() {
       {/* Stat row with mini trend bars */}
       <div className="grid grid-cols-3 divide-x divide-[#2E2A45] border-b border-[#2E2A45]">
         {STATS.map((s) => (
-          <div key={s.label} className="px-4 py-3">
+          <div key={s.label} className="min-w-0 px-3 py-2.5 sm:px-4 sm:py-3">
             <div className="flex items-end justify-between">
-              <p className={`tnum font-mono text-lg font-medium ${s.color}`}>{s.n}</p>
-              <div className="mb-1 flex items-end gap-[2px]" aria-hidden>
+              <p className={`tnum font-mono text-base font-medium sm:text-lg ${s.color}`}>{s.n}</p>
+              <div className="mb-1 hidden items-end gap-[2px] sm:flex" aria-hidden>
                 {s.bars.map((h, i) => (
                   <span
                     key={i}
@@ -63,7 +63,7 @@ export default function DashboardMock() {
                 ))}
               </div>
             </div>
-            <p className="mt-0.5 text-[11px] text-[#7B7694]">{s.label}</p>
+            <p className="mt-0.5 truncate text-[10px] text-[#7B7694] sm:text-[11px]">{s.label}</p>
           </div>
         ))}
       </div>
@@ -71,9 +71,12 @@ export default function DashboardMock() {
       {/* Event rows */}
       <div className="flex-1 divide-y divide-[#2E2A45]/70 overflow-hidden">
         {LOG_ROWS.map((row) => (
-          <div key={row.time} className="flex items-center gap-3 px-4 py-2.5">
-            <span className="tnum font-mono text-[11px] text-[#7B7694]">{row.time}</span>
-            <span className="flex-1 truncate text-[12px] text-[#B4AEC8]">
+          <div
+            key={row.time}
+            className={`${row.mobileHidden ? "hidden sm:flex" : "flex"} items-center gap-2.5 px-3 py-2.5 sm:gap-3 sm:px-4`}
+          >
+            <span className="tnum shrink-0 font-mono text-[11px] text-[#7B7694]">{row.time}</span>
+            <span className="min-w-0 flex-1 truncate text-[12px] text-[#B4AEC8]">
               <span className="text-[#7B7694]">{row.src}</span>
               <span className="mx-1.5 text-[#2E2A45]">·</span>
               {row.note}
@@ -92,7 +95,7 @@ export default function DashboardMock() {
         <svg viewBox="0 0 16 16" className="h-3 w-3 text-[#8DA6FF]" fill="none" stroke="currentColor" strokeWidth="1.4">
           <path d="M8 1.5l1.8 4.2 4.5.4-3.4 3 1 4.4L8 11.2l-3.9 2.3 1-4.4-3.4-3 4.5-.4z" strokeLinejoin="round" />
         </svg>
-        <p className="tnum font-mono text-[10px] text-[#7B7694]">
+        <p className="tnum min-w-0 truncate font-mono text-[10px] text-[#7B7694]">
           AI 已自動過濾 214 筆重複與誤報事件 · 最近更新 14:02:11
         </p>
       </div>

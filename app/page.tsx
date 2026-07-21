@@ -59,9 +59,9 @@ export default function HomePage() {
           <div className="grid gap-14 sm:grid-cols-[1.1fr_0.9fr] sm:items-center">
             <div>
               <p className="eyebrow mb-6">Enterprise Threat Defense</p>
-              <h1 className="text-5xl font-bold leading-[1.14] tracking-tight text-ink sm:text-6xl">
+              <h1 className="text-[34px] font-bold leading-[1.24] tracking-tight text-ink sm:text-6xl sm:leading-[1.14]">
                 把雜亂的資安事件，
-                <br />
+                <br className="hidden sm:block" />
                 變成<span className="grad-text">有序的防禦體系</span>
               </h1>
               <p className="mt-7 max-w-xl text-[17px] font-normal leading-relaxed text-slate">
@@ -97,8 +97,8 @@ export default function HomePage() {
             </div>
 
             {/* Layered product-UI stack (Coinbase signature) */}
-            <div className="relative">
-              <div className="h-72 overflow-hidden rounded-lg shadow-mock sm:h-96">
+            <div className="relative min-w-0">
+              <div className="h-[17rem] overflow-hidden rounded-lg shadow-mock sm:h-96">
                 <DashboardMock />
               </div>
               <div className="absolute -bottom-6 -left-4 hidden w-56 rounded-lg border border-[#2E2A45] bg-[#131020] p-4 shadow-mock sm:block">
