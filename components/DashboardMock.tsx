@@ -1,10 +1,10 @@
 // A believable monitoring-dashboard mockup, styled like a real product
 // window (traffic-light chrome + labeled title bar).
 //
-// Deliberately kept on its own fixed dark palette instead of the shared
-// theme tokens. Even on the site's light theme, this stays a dark "product
-// screenshot" floating in the hero — a common, effective pattern for SaaS
-// marketing pages (dark UI screenshot as a focal point on a light page).
+// Visual language borrowed from observability products (Sentry-style):
+// violet-tinted midnight canvas, data-dense rows, monospace timestamps,
+// tabular figures, and a quiet "AI noise-filter" status line — so the
+// mockup reads like a screenshot of the actual product.
 
 const LOG_ROWS = [
   { time: "14:02:11", src: "防火牆 / 對外連線", level: "high" as const, note: "異常掃描行為，來源 IP 已封鎖" },
@@ -14,47 +14,68 @@ const LOG_ROWS = [
 ];
 
 const LEVEL_STYLE = {
-  high: "bg-[#FF6B54]/15 text-[#FF6B54]",
-  mid: "bg-[#FFB648]/15 text-[#FFB648]",
-  low: "bg-[#3DD68C]/15 text-[#3DD68C]",
+  high: "bg-[#FF6B54]/15 text-[#FF7A66]",
+  mid: "bg-[#FFB648]/15 text-[#FFC163]",
+  low: "bg-[#3DD68C]/15 text-[#4ADE97]",
 };
 
 const LEVEL_LABEL = { high: "高", mid: "中", low: "低" };
 
+const STATS = [
+  { n: "2", label: "高風險事件", color: "text-[#FF7A66]", bars: [3, 5, 2, 6, 4, 8, 5] },
+  { n: "5", label: "中風險事件", color: "text-[#FFC163]", bars: [4, 6, 5, 3, 7, 5, 6] },
+  { n: "18", label: "低風險事件", color: "text-[#4ADE97]", bars: [5, 4, 6, 5, 4, 6, 5] },
+];
+
 export default function DashboardMock() {
   return (
-    <div className="flex h-full w-full flex-col overflow-hidden rounded border border-[#232B3D] bg-[#161E2E]">
-      <div className="flex items-center gap-1.5 border-b border-[#232B3D] px-4 py-3">
+    <div className="flex h-full w-full flex-col overflow-hidden rounded-lg border border-[#2E2A45] bg-[#171225]">
+      {/* Window chrome */}
+      <div className="flex items-center gap-1.5 border-b border-[#2E2A45] px-4 py-3">
         <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
-        <span className="ml-3 font-mono text-xs uppercase tracking-[0.14em] text-[#5B9CFF]">
+        <span className="ml-3 font-mono text-xs uppercase tracking-[0.14em] text-[#8DA6FF]">
           即時監控儀表板
+        </span>
+        <span className="ml-auto flex items-center gap-1.5 font-mono text-[10px] text-[#4ADE97]">
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#4ADE97] opacity-60" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#4ADE97]" />
+          </span>
+          LIVE
         </span>
       </div>
 
-      <div className="grid grid-cols-3 divide-x divide-[#232B3D] border-b border-[#232B3D]">
-        <div className="px-4 py-3">
-          <p className="font-mono text-lg font-medium text-[#FF6B54]">2</p>
-          <p className="mt-0.5 text-[11px] text-[#748099]">高風險事件</p>
-        </div>
-        <div className="px-4 py-3">
-          <p className="font-mono text-lg font-medium text-[#FFB648]">5</p>
-          <p className="mt-0.5 text-[11px] text-[#748099]">中風險事件</p>
-        </div>
-        <div className="px-4 py-3">
-          <p className="font-mono text-lg font-medium text-[#3DD68C]">18</p>
-          <p className="mt-0.5 text-[11px] text-[#748099]">低風險事件</p>
-        </div>
+      {/* Stat row with mini trend bars */}
+      <div className="grid grid-cols-3 divide-x divide-[#2E2A45] border-b border-[#2E2A45]">
+        {STATS.map((s) => (
+          <div key={s.label} className="px-4 py-3">
+            <div className="flex items-end justify-between">
+              <p className={`tnum font-mono text-lg font-medium ${s.color}`}>{s.n}</p>
+              <div className="mb-1 flex items-end gap-[2px]" aria-hidden>
+                {s.bars.map((h, i) => (
+                  <span
+                    key={i}
+                    className="w-[3px] rounded-[1px] bg-[#43407A]"
+                    style={{ height: `${h * 2}px` }}
+                  />
+                ))}
+              </div>
+            </div>
+            <p className="mt-0.5 text-[11px] text-[#7B7694]">{s.label}</p>
+          </div>
+        ))}
       </div>
 
-      <div className="flex-1 divide-y divide-[#232B3D] overflow-hidden">
+      {/* Event rows */}
+      <div className="flex-1 divide-y divide-[#2E2A45]/70 overflow-hidden">
         {LOG_ROWS.map((row) => (
           <div key={row.time} className="flex items-center gap-3 px-4 py-2.5">
-            <span className="font-mono text-[11px] text-[#748099]">{row.time}</span>
-            <span className="flex-1 truncate text-[12px] text-[#AAB4C8]">
-              <span className="text-[#748099]">{row.src}</span>
-              <span className="mx-1.5 text-[#232B3D]">·</span>
+            <span className="tnum font-mono text-[11px] text-[#7B7694]">{row.time}</span>
+            <span className="flex-1 truncate text-[12px] text-[#B4AEC8]">
+              <span className="text-[#7B7694]">{row.src}</span>
+              <span className="mx-1.5 text-[#2E2A45]">·</span>
               {row.note}
             </span>
             <span
@@ -64,6 +85,16 @@ export default function DashboardMock() {
             </span>
           </div>
         ))}
+      </div>
+
+      {/* AI status line */}
+      <div className="flex items-center gap-2 border-t border-[#2E2A45] bg-[#131020] px-4 py-2">
+        <svg viewBox="0 0 16 16" className="h-3 w-3 text-[#8DA6FF]" fill="none" stroke="currentColor" strokeWidth="1.4">
+          <path d="M8 1.5l1.8 4.2 4.5.4-3.4 3 1 4.4L8 11.2l-3.9 2.3 1-4.4-3.4-3 4.5-.4z" strokeLinejoin="round" />
+        </svg>
+        <p className="tnum font-mono text-[10px] text-[#7B7694]">
+          AI 已自動過濾 214 筆重複與誤報事件 · 最近更新 14:02:11
+        </p>
       </div>
     </div>
   );

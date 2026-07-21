@@ -15,8 +15,8 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
-      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5">
+    <header className="sticky top-0 z-50 border-b border-line bg-white/85 backdrop-blur-md">
+      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image
             src="/logo.png"
@@ -24,18 +24,18 @@ export default function Header() {
             width={700}
             height={460}
             priority
-            className="h-11 w-auto"
+            className="h-10 w-auto"
           />
-          <span className="text-xl font-bold tracking-tight text-ink">向雲智慧</span>
+          <span className="text-lg font-bold tracking-tight text-ink">向雲智慧</span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-9 sm:flex">
+        <nav className="hidden items-center gap-8 sm:flex">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-base font-medium text-slate transition-colors hover:text-ink"
+              className="text-[15px] font-medium text-slate transition-colors hover:text-ink"
             >
               {item.label}
             </Link>
@@ -45,7 +45,7 @@ export default function Header() {
         <div className="hidden items-center gap-3 sm:flex">
           <Link
             href="/contact"
-            className="rounded bg-signal px-5 py-2.5 text-base font-medium text-white transition-colors hover:bg-signal-dark"
+            className="btn-pill bg-signal px-6 py-2.5 text-[15px] text-white hover:bg-signal-dark"
           >
             預約諮詢
           </Link>
@@ -57,7 +57,7 @@ export default function Header() {
           aria-label={open ? "關閉選單" : "開啟選單"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="flex h-9 w-9 items-center justify-center rounded border border-line text-ink sm:hidden"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink sm:hidden"
         >
           <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
             {open ? (
@@ -70,7 +70,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-line bg-paper sm:hidden">
+        <nav className="border-t border-line bg-white sm:hidden">
           <div className="mx-auto flex max-w-content flex-col px-6 py-2">
             {NAV.map((item) => (
               <Link
@@ -85,7 +85,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="my-3 rounded bg-signal px-4 py-2.5 text-center text-sm font-medium text-white"
+              className="btn-pill my-3 bg-signal px-4 py-2.5 text-center text-sm text-white"
             >
               預約諮詢
             </Link>
