@@ -17,7 +17,7 @@ export default function ContactPage() {
     <section className="mx-auto max-w-content px-6 py-16 sm:py-20">
       <p className="eyebrow mb-4">CONTACT</p>
       <h1 className="text-3xl font-black tracking-tight text-ink sm:text-4xl">聯絡我們</h1>
-      <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate">
+      <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate">
         留下您的需求與聯絡方式，我們會在一個工作天內回覆評估建議。
       </p>
 
@@ -90,11 +90,11 @@ export default function ContactPage() {
         <div className="space-y-6 border-t border-line pt-10 sm:border-t-0 sm:border-l sm:pl-12 sm:pt-0">
           <div>
             <p className="eyebrow mb-2">Email</p>
-            <p className="text-sm text-ink">info@tocloudai.com</p>
+            <p className="text-base text-ink">info@tocloudai.com</p>
           </div>
           <div>
             <p className="eyebrow mb-2">服務對象</p>
-            <p className="text-sm leading-relaxed text-slate">
+            <p className="text-base leading-relaxed text-slate">
               中小企業、政府機關單位，以及需要輕量化資安維運能力的組織。
             </p>
           </div>
