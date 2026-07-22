@@ -37,12 +37,12 @@ export default function DashboardMock() {
           <span className="ml-3 font-mono text-[11px] uppercase tracking-wider text-[#748099]">
             即時監控儀表板
           </span>
-          <span className="ml-auto flex items-center gap-1.5">
-            <span className="relative flex h-1.5 w-1.5">
+          <span className="ml-auto flex items-center gap-2">
+            <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#3DD68C] opacity-75" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#3DD68C]" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#3DD68C]" />
             </span>
-            <span className="font-mono text-[10px] font-medium tracking-wider text-[#3DD68C]">LIVE</span>
+            <span className="font-mono text-xs font-bold tracking-wider text-[#3DD68C]">LIVE</span>
           </span>
         </div>
 
