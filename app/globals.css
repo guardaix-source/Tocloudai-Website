@@ -4,21 +4,20 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: clip;
 }
 
 body {
-  background-color: #ffffff;
-  color: #0f172a;
+  background-color: #F7F9FC;
+  color: #0F172A;
 }
 
 ::selection {
-  background-color: #cfe0fe;
-  color: #0f172a;
+  background-color: #CFE0FE;
+  color: #0F172A;
 }
 
 :focus-visible {
-  outline: 2px solid #3e82f7;
+  outline: 2px solid #3E82F7;
   outline-offset: 2px;
 }
 
@@ -31,88 +30,31 @@ body {
   }
 }
 
-/* Coinbase-style small pill badge used as section eyebrow */
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
   font-family: var(--font-plex-mono), ui-monospace, monospace;
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #2563eb;
-  background-color: #eef3fd;
-  border-radius: 9999px;
-  padding: 0.3rem 0.8rem;
-}
-
-.eyebrow--on-dark {
-  color: #8db4fb;
-  background-color: rgba(141, 180, 251, 0.12);
+  color: #2563EB;
 }
 
 .section-line {
-  border-top: 1px solid #e3e8ee;
+  border-top: 1px solid #E2E8F0;
 }
 
 .grad-text {
-  background-image: linear-gradient(90deg, #2563eb 0%, #7c6ff0 100%);
+  background-image: linear-gradient(90deg, #2563EB 0%, #7C6FF0 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Stripe-style atmospheric gradient wash behind the hero — pastel,
-   organic, confined to the top band of the page. */
-.hero-mesh {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-mesh::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(42% 55% at 12% 8%, rgba(62, 130, 247, 0.14) 0%, transparent 70%),
-    radial-gradient(38% 50% at 78% 4%, rgba(124, 111, 240, 0.13) 0%, transparent 70%),
-    radial-gradient(30% 42% at 48% 0%, rgba(99, 179, 237, 0.1) 0%, transparent 72%),
-    radial-gradient(26% 34% at 94% 28%, rgba(62, 130, 247, 0.07) 0%, transparent 75%);
-}
-
-.hero-mesh > * {
-  position: relative;
-}
-
-/* Card language: hairline border, generous radius, one soft shadow tier
-   (Stripe shadow-blue), lift on hover. */
 .glow-card {
-  border: 1px solid #e3e8ee;
-  box-shadow: 0 1px 3px rgba(0, 55, 112, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 0 0 1px #E2E8F0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .glow-card:hover {
-  transform: translateY(-3px);
-  border-color: #cdd9ea;
-  box-shadow: 0 8px 24px rgba(0, 55, 112, 0.1), 0 2px 6px rgba(0, 55, 112, 0.05);
-}
-
-/* Primary CTA: Coinbase pill geometry */
-.btn-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-}
-
-/* Tabular figures for every number that matters (Stripe tnum signal) */
-.tnum {
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: "tnum";
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px #2E63C9, 0 12px 28px -10px rgba(62, 130, 247, 0.28);
 }

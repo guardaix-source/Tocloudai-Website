@@ -15,7 +15,7 @@ const COLOR: Record<Level, string> = {
 export default function RiskBadge({ level }: { level: Level }) {
   return (
     <span
-      className={`eyebrow inline-flex items-center gap-1.5 rounded-sm px-2 py-1 ${COLOR[level]}`}
+      className={`inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1 font-mono text-xs font-medium uppercase tracking-wide ${COLOR[level]}`}
     >
       <span className="h-1.5 w-1.5 rounded-full bg-current" />
       {LABEL[level]}

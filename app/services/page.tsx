@@ -109,10 +109,15 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <RiskBadge level="high" />
-            <RiskBadge level="mid" />
-            <RiskBadge level="low" />
+          <div className="mt-8">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted">
+              事件會自動標示為以下風險等級
+            </p>
+            <div className="mt-3 flex flex-wrap gap-3">
+              <RiskBadge level="high" />
+              <RiskBadge level="mid" />
+              <RiskBadge level="low" />
+            </div>
           </div>
         </div>
       </section>
