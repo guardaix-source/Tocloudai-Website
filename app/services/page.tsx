@@ -32,24 +32,22 @@ const SERVICE_LIST = [
 export default function ServicesPage() {
   return (
     <>
-      <section className="hero-mesh">
-        <div className="mx-auto max-w-content px-6 pb-16 pt-16 sm:pt-20">
-          <p className="eyebrow mb-5">Services</p>
-          <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-5xl">服務項目</h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate">
-            四大核心技術模組彼此串接，構成從情資蒐集到事件結案的完整資安維運閉環。
-          </p>
-        </div>
+      <section className="mx-auto max-w-content px-6 pb-14 pt-16 sm:pt-20">
+        <p className="eyebrow mb-4">SERVICES</p>
+        <h1 className="text-4xl font-black tracking-tight text-ink sm:text-5xl">服務項目</h1>
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate">
+          四大核心技術模組彼此串接，構成從情資蒐集到事件結案的完整資安維運閉環。
+        </p>
       </section>
 
       {/* In-page module nav */}
-      <div className="sticky top-[73px] z-40 border-y border-line bg-white/90 backdrop-blur-md">
-        <nav className="mx-auto flex max-w-content gap-3 overflow-x-auto px-6 py-3 text-sm">
+      <div className="sticky top-[85px] z-40 border-y border-line bg-paper/95 backdrop-blur">
+        <nav className="mx-auto flex max-w-content gap-6 overflow-x-auto px-6 py-3 text-sm">
           {MODULE_NAV.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="tnum whitespace-nowrap rounded-full border border-transparent px-3.5 py-1.5 font-mono text-[13px] text-slate transition-colors hover:border-line hover:text-signal"
+              className="whitespace-nowrap text-slate transition-colors hover:text-signal"
             >
               {item.label}
             </a>
@@ -58,15 +56,13 @@ export default function ServicesPage() {
       </div>
 
       {/* Module 1 */}
-      <section id="module-01" className="scroll-mt-36">
-        <div className="mx-auto max-w-content px-6 py-16">
+      <section id="module-01" className="section-line scroll-mt-36">
+        <div className="mx-auto max-w-content px-6 py-14">
           <div className="flex items-center justify-between">
-            <span className="tnum font-mono text-sm text-signal">01</span>
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-signal-light">
-              <IconThreatIntel className="h-6 w-6 text-signal-bright" />
-            </div>
+            <span className="font-mono text-sm text-signal">01</span>
+            <IconThreatIntel className="h-9 w-9 text-signal" />
           </div>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink">國際全球威脅情資訂閱服務</h2>
+          <h2 className="mt-3 text-3xl font-bold text-ink sm:text-4xl">國際全球威脅情資訂閱服務</h2>
           <p className="mt-2 text-sm text-muted">通用開放威脅資料庫</p>
           <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-slate">
             整合國際公開全球威脅情資體系，彙整全球各大資安研究機構、國際威脅監測中心的開放式威脅數據，即時更新最新勒索軟體、木馬病毒、惡意程式、系統漏洞、異常掃描、暴力破解、DDoS
@@ -78,15 +74,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="module-02" className="scroll-mt-36 border-y border-line bg-surface2">
-        <div className="mx-auto max-w-content px-6 py-16">
+      <section id="module-02" className="section-line scroll-mt-36">
+        <div className="mx-auto max-w-content px-6 py-14">
           <div className="flex items-center justify-between">
-            <span className="tnum font-mono text-sm text-signal">02</span>
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-signal-light">
-              <IconMonitoring className="h-6 w-6 text-signal-bright" />
-            </div>
+            <span className="font-mono text-sm text-signal">02</span>
+            <IconMonitoring className="h-9 w-9 text-signal" />
           </div>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink">全環境事件匯整與可視化監控建置</h2>
+          <h2 className="mt-3 text-3xl font-bold text-ink sm:text-4xl">全環境事件匯整與可視化監控建置</h2>
           <p className="mt-2 text-sm text-muted">開源監控平台</p>
           <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-slate">
             企業資安最大痛點，多為設備日誌分散、事件雜訊過高、無統一監控介面、異常行為無法即時察覺，往往僅能事後追溯。我們基於開源資料視覺化監控技術，為企業建置專屬整合監控平台，統一匯整防火牆、網路交換設備、主機伺服器、雲端服務、對外連線、內網存取等所有資安事件與流量紀錄。
@@ -97,23 +91,21 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="module-03" className="scroll-mt-36">
-        <div className="mx-auto max-w-content px-6 py-16">
+      <section id="module-03" className="section-line scroll-mt-36">
+        <div className="mx-auto max-w-content px-6 py-14">
           <div className="flex items-center justify-between">
-            <span className="tnum font-mono text-sm text-signal">03</span>
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-signal-light">
-              <IconAIEngine className="h-6 w-6 text-signal-bright" />
-            </div>
+            <span className="font-mono text-sm text-signal">03</span>
+            <IconAIEngine className="h-9 w-9 text-signal" />
           </div>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink">AI 智能安全事件分析與風險研判引擎</h2>
+          <h2 className="mt-3 text-3xl font-bold text-ink sm:text-4xl">AI 智能安全事件分析與風險研判引擎</h2>
           <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-slate">
             單純的日誌蒐集無法產生防禦價值，我們導入 AI 自動分析研判機制，結合企業內部真實事件紀錄與國際最新威脅情資上下文進行雙層交叉比對，自動化完成風險鑑別。
           </p>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {AI_CAPABILITIES.map((c) => (
-              <div key={c.title} className="glow-card rounded-2xl bg-surface p-6">
-                <h3 className="text-sm font-bold text-ink">{c.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate">{c.desc}</p>
+              <div key={c.title} className="glow-card rounded-lg bg-surface p-6">
+                <h3 className="text-base font-bold text-ink">{c.title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-slate">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -125,15 +117,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="module-04" className="scroll-mt-36 border-y border-line bg-surface2">
-        <div className="mx-auto max-w-content px-6 py-16">
+      <section id="module-04" className="section-line scroll-mt-36">
+        <div className="mx-auto max-w-content px-6 py-14">
           <div className="flex items-center justify-between">
-            <span className="tnum font-mono text-sm text-signal">04</span>
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-signal-light">
-              <IconAlertBot className="h-6 w-6 text-signal-bright" />
-            </div>
+            <span className="font-mono text-sm text-signal">04</span>
+            <IconAlertBot className="h-9 w-9 text-signal" />
           </div>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink">客製化即時分級告警機器人服務</h2>
+          <h2 className="mt-3 text-3xl font-bold text-ink sm:text-4xl">客製化即時分級告警機器人服務</h2>
           <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-slate">
             解決傳統監控「有紀錄、無通知、事件延遲處理」的維運缺口，我們建置專屬客製化線上告警機器人，搭配 AI
             分析結果進行分級、分群、即時推送。高風險事件即時緊急推送、中風險事件彙整警示、低風險事件自動紀錄留存。
@@ -145,8 +135,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Full service list */}
-      <section>
-        <div className="mx-auto max-w-content px-6 py-16">
+      <section className="section-line">
+        <div className="mx-auto max-w-content px-6 py-14">
           <p className="eyebrow mb-6">完整服務清單</p>
           <ul className="grid gap-4 sm:grid-cols-2">
             {SERVICE_LIST.map((item) => (
