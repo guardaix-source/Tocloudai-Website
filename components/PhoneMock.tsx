@@ -1,8 +1,9 @@
 import Image from "next/image";
 
-// A refined CSS-drawn phone frame — brushed-metal gradient bezel, a modern
-// "dynamic island" cutout, and a subtle glass highlight overlay — housing a
-// real product screenshot, per Keith's spec ("一支高質感的 iPhone 實機模擬圖，
+// A refined CSS-drawn phone frame — a thick brushed-titanium gradient bezel
+// (light highlight bands catching the edges, dark core), a modern "dynamic
+// island" cutout, and a subtle glass highlight overlay — housing a real
+// product screenshot, per Keith's spec ("一支高質感的 iPhone 實機模擬圖，
 // 呈現深色的 Telegram 推播畫面"). The screenshot is a real (redacted) TG
 // alert card, not an illustration, so the feature claim stays honest.
 //
@@ -13,16 +14,20 @@ import Image from "next/image";
 export default function PhoneMock() {
   return (
     <div className="relative mx-auto w-full max-w-[300px]">
-      {/* metallic bezel — gradient ring simulates a brushed-titanium edge */}
+      {/* metallic bezel — a thick gradient ring simulates a brushed-titanium
+          edge with light catching the top-left and bottom-right corners */}
       <div
-        className="relative rounded-[3rem] p-[3px] shadow-mock"
+        className="relative rounded-[3rem] p-[9px] shadow-mock"
         style={{
           background:
-            "linear-gradient(155deg, #4B505C 0%, #23262E 18%, #0A0C10 50%, #23262E 82%, #4B505C 100%)",
+            "linear-gradient(155deg, #9CA3AF 0%, #5B616E 14%, #23262E 40%, #0A0C10 55%, #23262E 70%, #5B616E 88%, #9CA3AF 100%)",
         }}
       >
-        <div className="rounded-[2.9rem] bg-[#0A0C10] p-2">
-          <div className="relative aspect-[9/19.5] w-full overflow-hidden rounded-[2.35rem] bg-[#0B0F19]">
+        <div
+          className="rounded-[2.5rem] bg-[#0A0C10] p-1.5"
+          style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.06)" }}
+        >
+          <div className="relative aspect-[9/19.5] w-full overflow-hidden rounded-[2.1rem] bg-[#0B0F19]">
             <div className="absolute inset-x-4 inset-y-11">
               <Image
                 src="/images/tg-alert-sample.jpg"
@@ -46,10 +51,19 @@ export default function PhoneMock() {
         </div>
       </div>
 
-      {/* side buttons on the metal bezel */}
-      <div className="absolute -left-[3px] top-24 h-8 w-[3px] rounded-l bg-[#3A3E48]" />
-      <div className="absolute -left-[3px] top-36 h-12 w-[3px] rounded-l bg-[#3A3E48]" />
-      <div className="absolute -right-[3px] top-28 h-16 w-[3px] rounded-r bg-[#3A3E48]" />
+      {/* side buttons — metallic gradient to match the bezel */}
+      <div
+        className="absolute -left-1 top-24 h-8 w-1 rounded-l"
+        style={{ background: "linear-gradient(180deg, #C4C9D2, #6B7280)" }}
+      />
+      <div
+        className="absolute -left-1 top-36 h-12 w-1 rounded-l"
+        style={{ background: "linear-gradient(180deg, #C4C9D2, #6B7280)" }}
+      />
+      <div
+        className="absolute -right-1 top-28 h-16 w-1 rounded-r"
+        style={{ background: "linear-gradient(180deg, #C4C9D2, #6B7280)" }}
+      />
     </div>
   );
 }
