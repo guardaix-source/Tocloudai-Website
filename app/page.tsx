@@ -240,15 +240,17 @@ export default function HomePage() {
               <p className="mt-1 text-xs text-muted">被動、單點、事後補救</p>
             </div>
 
-            <svg
-              viewBox="0 0 24 24"
-              className="h-9 w-9 shrink-0 rotate-90 text-signal sm:h-11 sm:w-11 sm:rotate-0"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M3 12h15M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+            <div className="flex h-14 w-14 shrink-0 rotate-90 items-center justify-center rounded-full bg-signal-light sm:h-16 sm:w-16 sm:rotate-0">
+              <svg
+                viewBox="0 0 24 24"
+                className="h-7 w-7 text-signal sm:h-9 sm:w-9"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path d="M3 12h15M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
 
             <div className="grid w-full grid-cols-5 gap-2 rounded-lg bg-white p-4 shadow-card sm:w-auto sm:gap-3 sm:p-5">
               {PIPELINE.map((p) => (
