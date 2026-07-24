@@ -312,8 +312,8 @@ export default function HomePage() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {ROI.map((r) => (
               <div key={r.title} className="card-lift rounded-lg bg-white p-6 text-center shadow-card">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-signal-light">
-                  <r.Icon className="h-6 w-6 text-signal" />
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-signal-light sm:h-16 sm:w-16">
+                  <r.Icon className="h-6 w-6 text-signal sm:h-8 sm:w-8" />
                 </div>
                 <p className="mt-4 text-2xl font-black text-signal">{r.value}</p>
                 <h3 className="mt-1 text-sm font-bold text-ink">{r.title}</h3>
