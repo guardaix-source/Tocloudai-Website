@@ -7,13 +7,17 @@ import Image from "next/image";
 // 呈現深色的 Telegram 推播畫面"). The screenshot is a real (redacted) TG
 // alert card, not an illustration, so the feature claim stays honest.
 //
-// The card image uses object-contain (not cover) inside an inset wrapper,
-// so the full alert card is always shown with clean margins on a dark
-// "chat wallpaper" backdrop — this avoids any edge-cropping and reads as a
-// legitimate Telegram dark-mode chat background behind a light message card.
+// The screen fills edge-to-edge (object-cover, full bleed) so the whole
+// alert card is visible, not just a cropped banner. The source image
+// (public/images/tg-alert-sample.jpg) is pre-padded — extra dark "wallpaper"
+// margin added left/right and above the card — so its aspect ratio is
+// slightly WIDER than the screen's 9:19.5. That guarantees object-cover
+// only ever crops into the padding (and the top clearance keeps the dynamic
+// island off the card's title line), never into real card content, however
+// the screen ends up sized on the page.
 export default function PhoneMock() {
   return (
-    <div className="relative mx-auto w-full max-w-[300px]">
+    <div className="relative mx-auto w-full max-w-[380px]">
       {/* metallic bezel — a thick gradient ring simulates a brushed-titanium
           edge with light catching the top-left and bottom-right corners */}
       <div
@@ -28,15 +32,13 @@ export default function PhoneMock() {
           style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.06)" }}
         >
           <div className="relative aspect-[9/19.5] w-full overflow-hidden rounded-[2.1rem] bg-[#0B0F19]">
-            <div className="absolute inset-x-4 inset-y-11">
-              <Image
-                src="/images/tg-alert-sample.jpg"
-                alt="雲智禦 AI 決策系統 — Telegram 即時告警畫面示意"
-                fill
-                className="object-contain object-center"
-                sizes="300px"
-              />
-            </div>
+            <Image
+              src="/images/tg-alert-sample.jpg"
+              alt="雲智禦 AI 決策系統 — Telegram 即時告警畫面示意"
+              fill
+              className="object-cover object-center"
+              sizes="380px"
+            />
             {/* dynamic island */}
             <div className="absolute left-1/2 top-3 z-10 h-[22px] w-[94px] -translate-x-1/2 rounded-full bg-black" />
             {/* glass highlight streak, for a bit of realism on the screen */}
