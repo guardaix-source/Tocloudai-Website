@@ -234,10 +234,10 @@ export default function HomePage() {
 
           {/* Traditional defense → CTEM pipeline comparison */}
           <div className="mt-14 flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-4">
-            <div className="flex w-full flex-col items-center rounded-lg bg-white p-6 shadow-card sm:w-40">
-              <IconShieldCrack className="h-10 w-10 text-muted" />
-              <p className="mt-3 text-sm font-semibold text-slate">傳統防禦</p>
-              <p className="mt-1 text-xs text-muted">被動、單點、事後補救</p>
+            <div className="flex w-full flex-col items-center rounded-lg bg-white p-6 shadow-card sm:w-48 sm:p-7">
+              <IconShieldCrack className="h-12 w-12 text-muted sm:h-14 sm:w-14" />
+              <p className="mt-3 text-base font-semibold text-slate sm:text-lg">傳統防禦</p>
+              <p className="mt-1 text-sm text-muted">被動、單點、事後補救</p>
             </div>
 
             <div className="flex h-14 w-14 shrink-0 rotate-90 items-center justify-center rounded-full bg-signal-light sm:h-16 sm:w-16 sm:rotate-0">
@@ -252,13 +252,13 @@ export default function HomePage() {
               </svg>
             </div>
 
-            <div className="grid w-full grid-cols-5 gap-2 rounded-lg bg-white p-4 shadow-card sm:w-auto sm:gap-3 sm:p-5">
+            <div className="grid w-full grid-cols-5 gap-3 rounded-lg bg-white p-5 shadow-card sm:w-auto sm:gap-6 sm:p-7">
               {PIPELINE.map((p) => (
-                <div key={p.n} className="flex flex-col items-center gap-1.5 px-1">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-signal-light sm:h-10 sm:w-10">
-                    <p.Icon className="h-5 w-5 text-signal" />
+                <div key={p.n} className="flex flex-col items-center gap-2 px-1">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-signal-light sm:h-16 sm:w-16">
+                    <p.Icon className="h-6 w-6 text-signal sm:h-8 sm:w-8" />
                   </div>
-                  <p className="text-center text-[10px] font-medium leading-tight text-ink sm:text-xs">
+                  <p className="text-center text-xs font-semibold leading-tight text-ink sm:text-base">
                     {p.label}
                   </p>
                 </div>
