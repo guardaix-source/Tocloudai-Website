@@ -9,7 +9,6 @@ const LOG_ROWS = [
   { time: "16:46:22", src: "防火牆 / DNS 阻擋", level: "high" as const, note: "偵測到網域阻擋，來源已封鎖" },
   { time: "14:45:44", src: "VPN / 認證", level: "high" as const, note: "VPN 認證失敗，疑似暴力破解" },
   { time: "14:12:08", src: "網路交換設備", level: "low" as const, note: "Connection Failed，例行流量" },
-  { time: "13:58:03", src: "主機伺服器", level: "low" as const, note: "例行更新，無異常" },
 ];
 
 const LEVEL_STYLE = {
@@ -70,8 +69,9 @@ export default function DashboardMock() {
           ))}
         </div>
 
-        {/* log rows */}
-        <div className="flex-1 divide-y divide-[#1F2937] overflow-hidden">
+        {/* log rows — bottom padding reserves clear space for the floating
+            AI card below so it never overlaps a real log entry */}
+        <div className="flex-1 divide-y divide-[#1F2937] overflow-hidden pb-24">
           {LOG_ROWS.map((row) => (
             <div key={row.time} className="flex items-center gap-3 px-4 py-2.5">
               <span className="font-mono text-[11px] text-[#6B7280]">{row.time}</span>

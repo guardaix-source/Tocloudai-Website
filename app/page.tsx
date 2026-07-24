@@ -3,7 +3,6 @@ import PhoneMock from "@/components/PhoneMock";
 import CTAForm from "@/components/CTAForm";
 import {
   IconShieldCrack,
-  IconRadar,
   IconClockAlert,
   IconTarget,
   IconChecklist,
@@ -241,7 +240,15 @@ export default function HomePage() {
               <p className="mt-1 text-xs text-muted">被動、單點、事後補救</p>
             </div>
 
-            <IconRadar className="h-6 w-6 shrink-0 rotate-90 text-line sm:rotate-0" />
+            <svg
+              viewBox="0 0 24 24"
+              className="h-9 w-9 shrink-0 rotate-90 text-signal sm:h-11 sm:w-11 sm:rotate-0"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M3 12h15M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
 
             <div className="grid w-full grid-cols-5 gap-2 rounded-lg bg-white p-4 shadow-card sm:w-auto sm:gap-3 sm:p-5">
               {PIPELINE.map((p) => (
