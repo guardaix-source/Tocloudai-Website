@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -17,7 +16,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+        <a href="#hero" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image
             src="/logo.png"
             alt="向雲智慧 TocloudAI"
@@ -27,7 +26,7 @@ export default function Header() {
             className="h-10 w-auto"
           />
           <span className="text-lg font-bold tracking-tight text-ink">向雲智慧</span>
-        </Link>
+        </a>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-8 sm:flex">
