@@ -1,16 +1,10 @@
-import Link from "next/link";
 import Image from "next/image";
 
-const SERVICE_LINKS = [
-  { href: "/services#module-01", label: "威脅情資訂閱" },
-  { href: "/services#module-02", label: "可視化監控建置" },
-  { href: "/services#module-03", label: "AI 風險研判" },
-  { href: "/services#module-04", label: "分級即時告警" },
-];
-
-const COMPANY_LINKS = [
-  { href: "/about", label: "關於我們" },
-  { href: "/contact", label: "聯絡我們" },
+const SECTION_LINKS = [
+  { href: "#crisis-stats", label: "現況痛點" },
+  { href: "#solution-ctem", label: "解決方案" },
+  { href: "#features-showcase", label: "功能展示" },
+  { href: "#business-roi", label: "投資效益" },
 ];
 
 export default function Footer() {
@@ -30,41 +24,38 @@ export default function Footer() {
               <p className="text-base font-bold text-ink">向雲智慧</p>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate">
-              企業資安維運與威脅情資訂閱服務，把雜亂的資安事件，變成有序的防禦體系。
+              雲智禦 AI 決策系統——資料不落地，毫秒級的情資驅動引擎，企業的安全新視界。
             </p>
           </div>
           <div>
-            <p className="text-sm font-semibold text-ink">服務項目</p>
+            <p className="text-sm font-semibold text-ink">網站導覽</p>
             <ul className="mt-4 space-y-2.5">
-              {SERVICE_LINKS.map((l) => (
+              {SECTION_LINKS.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-slate hover:text-ink">
+                  <a href={l.href} className="text-sm text-slate hover:text-ink">
                     {l.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <p className="text-sm font-semibold text-ink">公司</p>
+            <p className="text-sm font-semibold text-ink">聯絡我們</p>
             <ul className="mt-4 space-y-2.5">
-              {COMPANY_LINKS.map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-slate hover:text-ink">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
               <li>
-                <a href="mailto:contact@tocloudai.com" className="text-sm text-slate hover:text-ink">
-                  contact@tocloudai.com
+                <a href="mailto:info@tocloudai.com" className="text-sm text-slate hover:text-ink">
+                  info@tocloudai.com
+                </a>
+              </li>
+              <li>
+                <a href="#contact-form-section" className="text-sm text-slate hover:text-ink">
+                  申請免費 14 天 POC 測試
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Legal band */}
         <div className="mt-12 border-t border-line pt-6">
           <p className="text-xs text-muted">
             © {new Date().getFullYear()} 向雲智慧 TocloudAI. All rights reserved.

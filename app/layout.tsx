@@ -19,9 +19,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "向雲智慧 TocloudAI｜企業資安維運與威脅情資訂閱服務",
+  title: "雲智禦 AI 決策系統｜向雲智慧 TocloudAI",
   description:
-    "整合國際威脅情資、日誌可視化監控、AI 風險研判與分級即時告警，協助企業以有限預算建置主動式資安防禦體系。",
+    "企業的安全新視界。雲智禦 AI 決策系統無痛外掛於您的基礎防火牆，運用卡巴斯基全球情資，將平均偵測時間壓縮至毫秒級別，最低月訂閱 $18,000 起。",
 };
 
 export default function RootLayout({

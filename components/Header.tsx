@@ -5,17 +5,17 @@ import Image from "next/image";
 import { useState } from "react";
 
 const NAV = [
-  { href: "/#features", label: "特色" },
-  { href: "/#how-it-works", label: "如何運作" },
-  { href: "/services", label: "服務項目" },
-  { href: "/about", label: "關於我們" },
+  { href: "#crisis-stats", label: "現況痛點" },
+  { href: "#solution-ctem", label: "解決方案" },
+  { href: "#features-showcase", label: "功能展示" },
+  { href: "#business-roi", label: "投資效益" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image
@@ -32,23 +32,23 @@ export default function Header() {
         {/* Desktop nav */}
         <nav className="hidden items-center gap-8 sm:flex">
           {NAV.map((item) => (
-            <Link
+            <a
               key={item.href}
               href={item.href}
-              className="text-[15px] font-medium text-slate transition-colors hover:text-ink"
+              className="text-base font-medium text-slate transition-colors hover:text-ink"
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
         <div className="hidden items-center gap-3 sm:flex">
-          <Link
-            href="/contact"
-            className="btn-pill bg-signal px-6 py-2.5 text-[15px] text-white hover:bg-signal-dark"
+          <a
+            href="#contact-form-section"
+            className="btn-pill bg-signal px-6 py-2.5 text-base font-medium text-white transition-colors hover:bg-signal-bright"
           >
-            預約諮詢
-          </Link>
+            申請免費 POC 測試
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -73,22 +73,22 @@ export default function Header() {
         <nav className="border-t border-line bg-white sm:hidden">
           <div className="mx-auto flex max-w-content flex-col px-6 py-2">
             {NAV.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className="border-b border-line/60 py-3.5 text-base text-slate last:border-b-0 hover:text-ink"
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
-            <Link
-              href="/contact"
+            <a
+              href="#contact-form-section"
               onClick={() => setOpen(false)}
-              className="btn-pill my-3 bg-signal px-4 py-2.5 text-center text-sm text-white"
+              className="btn-pill my-3 bg-signal px-4 py-2.5 text-center text-sm font-medium text-white"
             >
-              預約諮詢
-            </Link>
+              申請免費 POC 測試
+            </a>
           </div>
         </nav>
       )}
